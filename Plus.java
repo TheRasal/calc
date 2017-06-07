@@ -2,38 +2,36 @@
  * Created by TMS on 02.06.2017.
  */
 public class Plus implements Calculator {
-    private String  a;
-    private String b;
+    private double  a;
+    private double  b;
 
-    public Plus(String a, String b) {
+    public Plus(double a, double b) {
         this.a = a;
-        this.b = b;
-    }
-
-    public Plus() {
-    }
-
-
-    public String getA() {
-        return a;
-    }
-
-    public void setA(String a) {
-        this.a = a;
-    }
-
-    public String getB() {
-        return b;
-    }
-
-    public void setB(String b) {
         this.b = b;
     }
 
     @Override
-    public Integer calc(){
-        return Integer.valueOf(a)+Integer.valueOf(b);
-
+    public double getA() {
+        return a;
     }
 
+    @Override
+    public void setA(double a) {
+        this.a = a;
+    }
+
+    @Override
+    public double getB() {
+        return b;
+    }
+
+    @Override
+    public void setB(double b) {
+        this.b = b;
+    }
+
+    @Override
+    public Double calc() {
+        return a+b;
+    }
 }

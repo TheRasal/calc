@@ -1,9 +1,8 @@
 public class Delenie implements Calculator {
-    private String a;
-    private String b;
+    private double a;
+    private double b;
 
-
-    public Delenie(String a, String b) {
+    public Delenie(double a, double b) {
         this.a = a;
         this.b = b;
     }
@@ -11,23 +10,28 @@ public class Delenie implements Calculator {
     public Delenie() {
     }
 
-    public String getA() {
+    @Override
+    public double getA() {
         return a;
     }
 
-    public void setA(String a) {
+    @Override
+    public void setA(double a) {
         this.a = a;
     }
 
-    public String getB() {
+    @Override
+    public double getB() {
         return b;
     }
 
-    public void setB(String b) {
+    @Override
+    public void setB(double b) {
         this.b = b;
     }
+
     @Override
-    public Integer calc(){
-        return Integer.valueOf(a)/Integer.valueOf(b);
+    public Double calc(){
+        return a/b;
     }
 }

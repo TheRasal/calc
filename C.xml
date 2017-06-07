@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 
 
@@ -12,9 +12,8 @@
 
 </bean>
     <bean id="minus" class="Minus">
-        <property name="a" value="10" />
-        <!--<property name="b" value="5"/>-->
-        <property name="b"> <value> 1</value></property>
+        <constructor-arg index="0" value="10"/>
+        <constructor-arg index="1" value="4"/>
 
     </bean>
     <bean id="delenie" class="Delenie">
@@ -25,5 +24,20 @@
     <bean id="umnozhenie" class="Umnozhenie">
         <property name="a" value="5"/>
         <property name="b" value="5"/>
+    </bean>
+    <bean id="sqrt" class="Sqrt">
+        <property name="a" value="25"/>
+    </bean>
+
+    <bean id="solver" class="Solver">
+        <property name="a" value="2"/>
+        <property name="b" value="6"/>
+        <property name="c" value="2"/>
+        <property name="delenie" ref="delenie"/>
+        <property name="minus" ref="minus"/>
+        <property name="plus" ref="plus"/>
+        <property name="sqrt" ref="sqrt"/>
+        <property name="umnozhenie" ref="umnozhenie"/>
+
     </bean>
 </beans>
